@@ -9,10 +9,11 @@ export default function Footer() {
       { name: 'Contact', href: '/contact' },
     ],
     services: [
-      { name: 'Outbound Prospecting', href: '/services#prospecting' },
-      { name: 'Appointment Setting', href: '/services#appointments' },
-      { name: 'Lead Qualification', href: '/services#qualification' },
-      { name: '24/7 Coverage', href: '/services#coverage' },
+      { name: 'Inbound Call Handling', href: '/services#inbound' },
+      { name: 'Outbound Calling', href: '/services#outbound' },
+      { name: 'Appointment Scheduling', href: '/services#appointments' },
+      { name: 'Lead Nurturing', href: '/services#nurturing' },
+      { name: 'CRM Follow-Up', href: '/services#crm' },
     ],
   };
 
@@ -49,7 +50,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-gray-400 text-sm mb-4">
-              Turn your real estate leads into booked appointments with our 24/7 ISA team built specifically for U.S. agents.
+              We act as a dedicated Inside Sales Agent (ISA) team that converts leads into qualified appointments. Serving Real Estate Teams & Agents and Home Inspection Companies.
             </p>
           </div>
 
@@ -114,7 +115,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} ISA Connect. All rights reserved.
+            &copy; {new Date().getFullYear()} ISAConnect. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">

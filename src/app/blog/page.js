@@ -5,7 +5,7 @@ import { getPostMetadata } from "@/lib/mdx";
 
 export const metadata = {
   title: "Blog",
-  description: "Expert insights on real estate lead conversion, ISA best practices, speed-to-lead strategies, and appointment setting tips from ISA Connect.",
+  description: "Expert insights on real estate lead conversion, ISA best practices, speed-to-lead strategies, and appointment setting tips from ISAConnect.",
 };
 
 export default function BlogPage() {

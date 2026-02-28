@@ -6,8 +6,8 @@ import CTABlock from "@/components/CTABlock";
 // Services data
 const services = [
   {
-    title: "Outbound Prospecting",
-    description: "Our trained ISAs proactively reach out to your leads with personalized, professional conversations that build trust.",
+    title: "Inbound Call Handling",
+    description: "Our trained ISAs handle all incoming calls professionally, qualifying leads and scheduling appointments while you focus on closings.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -15,8 +15,17 @@ const services = [
     ),
   },
   {
-    title: "Appointment Setting",
-    description: "We don't just make calls — we book qualified appointments directly into your calendar so you can focus on closing.",
+    title: "Outbound Calling",
+    description: "Proactive outreach to your leads with personalized conversations that build trust and convert prospects into qualified appointments.",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 3h5m0 0v5m0-5l-6 6M5 3a2 2 0 00-2 2v1c0 8.284 6.716 15 15 15h1a2 2 0 002-2v-3.28a1 1 0 00-.684-.948l-4.493-1.498a1 1 0 00-1.21.502l-1.13 2.257a11.042 11.042 0 01-5.516-5.516l2.257-1.13a1 1 0 00.502-1.21l-1.498-4.493A1 1 0 0015.28 3H5z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Appointment Scheduling",
+    description: "We don't just make calls — we book qualified appointments directly into your calendar so you can focus on closing deals.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -24,26 +33,8 @@ const services = [
     ),
   },
   {
-    title: "Speed-to-Lead Follow-Up",
-    description: "We respond to your new leads within minutes — not hours. The faster you respond, the higher your conversion rate.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Lead Qualification",
-    description: "Not all leads are created equal. We identify buyer/seller motivation, timeline, and budget before passing to you.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-  },
-  {
     title: "Lead Nurturing",
-    description: "Long-term leads need consistent follow-up. Our team nurtures cold leads until they're ready to act.",
+    description: "Long-term leads need consistent follow-up. Our team nurtures cold leads until they're ready to act with personalized touch sequences.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -51,8 +42,17 @@ const services = [
     ),
   },
   {
+    title: "CRM Follow-Up",
+    description: "Seamless integration with your existing CRM systems to ensure no lead falls through the cracks and all follow-ups are tracked.",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+    ),
+  },
+  {
     title: "24/7 Coverage",
-    description: "Leads don't wait for business hours. Our round-the-clock team ensures you never miss an opportunity.",
+    description: "Leads don't wait for business hours. Our round-the-clock team ensures you never miss an opportunity, even after hours.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -90,7 +90,7 @@ const steps = [
   {
     step: "01",
     title: "You Send Leads",
-    description: "Connect your lead sources — Zillow, Facebook, Google, Realtor.com, or any CRM.",
+    description: "Connect your lead sources — Meta Ads, Google Ads, or Geo-Targeting Ads.",
   },
   {
     step: "02",
@@ -113,15 +113,16 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-pink-50 opacity-50"></div>
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: 'url(/ISA-Connect/back.jpg)'}}></div>
+        <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#090818] mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold hero-text-white mb-6 leading-tight">
               Turn Real Estate Leads Into Appointments —{" "}
               <span className="gradient-text">24/7</span>
             </h1>
-            <p className="text-xl md:text-2xl text-[#4E4E58] mb-8 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl hero-text-white mb-8 max-w-3xl mx-auto">
               Speed-to-lead response within minutes. Professional appointment setting. 
               More closings for your brokerage — without hiring more staff.
             </p>
@@ -130,18 +131,6 @@ export default function Home() {
               <CTAButton variant="outline" href="#how-it-works">
                 See How It Works
               </CTAButton>
-            </div>
-            
-            {/* Trust indicators */}
-            <div className="mt-12 pt-8 border-t border-gray-200">
-              <p className="text-sm text-[#4E4E58] mb-4">Trusted by real estate teams generating leads from:</p>
-              <div className="flex flex-wrap justify-center gap-6 md:gap-10 text-[#4E4E58] font-medium">
-                <span>Zillow</span>
-                <span>Facebook Ads</span>
-                <span>Google PPC</span>
-                <span>Realtor.com</span>
-                <span>+ More</span>
-              </div>
             </div>
           </div>
         </div>
@@ -236,7 +225,7 @@ export default function Home() {
             How It Works
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Getting started with ISA Connect is simple. Here's your path to more appointments.
+            Getting started with ISAConnect is simple. Here&apos;s your path to more appointments.
           </p>
         </div>
         
@@ -247,8 +236,8 @@ export default function Home() {
               <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
               <p className="text-gray-400">{step.description}</p>
               
-              {/* Connector line (hidden on mobile and last item) */}
-              {index < steps.length - 1 && (
+              {/* Connector line (hidden on mobile and for steps 02, 03, 04) */}
+              {index < steps.length - 1 && index === 0 && (
                 <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-[var(--brand-purple)] to-[var(--brand-pink)] opacity-30"></div>
               )}
             </div>

@@ -10,33 +10,37 @@ const inter = Inter({
 
 export const metadata = {
   title: {
-    default: "ISA Connect | Real Estate Lead Conversion & Appointment Setting",
-    template: "%s | ISA Connect",
+    default: "ISAConnect | Real Estate Lead Conversion & Appointment Setting",
+    template: "%s | ISAConnect",
   },
-  description: "Turn your real estate leads into booked appointments with ISA Connect's 24/7 outbound call center. Speed-to-lead follow-up, appointment setting, and lead qualification for U.S. agents.",
-  keywords: ["real estate ISA", "inside sales agent", "lead conversion", "appointment setting", "real estate leads", "Zillow leads", "Facebook leads", "speed to lead"],
-  authors: [{ name: "ISA Connect" }],
+  description: "We act as a dedicated Inside Sales Agent (ISA) team that converts leads into qualified appointments. Inbound Call Handling, Outbound Calling, Appointment Scheduling, Lead Nurturing, CRM Follow-Up for Real Estate Teams & Agents and Home Inspection Companies.",
+  keywords: ["real estate ISA", "inside sales agent", "lead conversion", "appointment setting", "real estate leads", "Zillow leads", "Facebook leads", "speed to lead", "inbound call handling", "outbound calling", "appointment scheduling", "lead nurturing", "CRM follow-up"],
+  authors: [{ name: "ISAConnect" }],
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://isaconnect.com",
-    siteName: "ISA Connect",
-    title: "ISA Connect | Real Estate Lead Conversion & Appointment Setting",
-    description: "Turn your real estate leads into booked appointments with ISA Connect's 24/7 outbound call center.",
+    siteName: "ISAConnect",
+    title: "ISAConnect | Real Estate Lead Conversion & Appointment Setting",
+    description: "We act as a dedicated Inside Sales Agent (ISA) team that converts leads into qualified appointments.",
     images: [
       {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "ISA Connect - Real Estate Lead Conversion",
+        alt: "ISAConnect - Real Estate Lead Conversion",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ISA Connect | Real Estate Lead Conversion",
-    description: "Turn your real estate leads into booked appointments 24/7.",
+    title: "ISAConnect | Real Estate Lead Conversion",
+    description: "We act as a dedicated Inside Sales Agent (ISA) team that converts leads into qualified appointments.",
     images: ["/images/og-image.png"],
+  },
+  icons: {
+    icon: '/ISA-Connect/favicon.svg',
+    apple: '/ISA-Connect/favicon.svg',
   },
   robots: {
     index: true,

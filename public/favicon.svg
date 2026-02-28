@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6542C6" />
+      <stop offset="50%" stop-color="#9D38A5" />
+      <stop offset="100%" stop-color="#E02A7F" />
+    </linearGradient>
+  </defs>
+  <!-- Circular background -->
+  <circle cx="24" cy="24" r="24" fill="url(#logoGradient)" />
+  <!-- Headset design -->
+  <circle cx="24" cy="20" r="10" fill="none" stroke="#FFFFFF" stroke-width="2.5" />
+  <rect x="10" y="18" width="4" height="8" rx="2" fill="#FFFFFF" />
+  <rect x="34" y="18" width="4" height="8" rx="2" fill="#FFFFFF" />
+  <circle cx="24" cy="14" r="2" fill="#FFFFFF" />
+  <circle cx="18" cy="20" r="2" fill="#FFFFFF" />
+  <circle cx="30" cy="20" r="2" fill="#FFFFFF" />
+  <circle cx="24" cy="26" r="2" fill="#FFFFFF" />
+  <path d="M26 26 Q29 29 28 34 Q27 37 24 39" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-linecap="round" />
+  <circle cx="24" cy="39" r="2" fill="#FFFFFF" />
+</svg>

@@ -32,6 +32,10 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--heading);
 }
 
+.hero-text-white {
+  color: #ffffff !important;
+}
+
 .gradient-text {
   background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-magenta) 50%, var(--brand-pink) 100%);
   -webkit-background-clip: text;

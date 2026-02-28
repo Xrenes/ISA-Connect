@@ -2,7 +2,7 @@
 
 export default function CTAButton({ 
   children = 'Book a Call', 
-  href = 'https://calendly.com/isaconnect', 
+  href = 'https://calendly.com/isaconnectdiscoverycall/30min', 
   variant = 'primary',
   className = '',
   onClick

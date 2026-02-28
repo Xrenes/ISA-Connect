@@ -30,28 +30,6 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* Stats Banner */}
-      <Section background="dark">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div>
-            <div className="text-4xl md:text-5xl font-bold text-white mb-2">500+</div>
-            <p className="text-gray-400">Agents Served</p>
-          </div>
-          <div>
-            <div className="text-4xl md:text-5xl font-bold text-white mb-2">50K+</div>
-            <p className="text-gray-400">Appointments Set</p>
-          </div>
-          <div>
-            <div className="text-4xl md:text-5xl font-bold text-white mb-2">78%</div>
-            <p className="text-gray-400">Avg. Contact Rate</p>
-          </div>
-          <div>
-            <div className="text-4xl md:text-5xl font-bold text-white mb-2">3x</div>
-            <p className="text-gray-400">ROI Improvement</p>
-          </div>
-        </div>
-      </Section>
-
       {/* Case Studies Grid */}
       <Section background="white">
         <div className="text-center mb-12">

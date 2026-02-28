@@ -2,7 +2,7 @@ import CTAButton from './CTAButton';
 
 export default function CTABlock({ 
   title = "Ready to Convert More Leads?",
-  description = "Book a free strategy call to see how ISA Connect can help you turn more leads into appointments.",
+  description = "Book a free strategy call to see how ISAConnect can help you turn more leads into appointments.",
   variant = 'default'
 }) {
   const variants = {

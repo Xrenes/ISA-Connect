@@ -3,6 +3,11 @@
 import { useState, useMemo } from 'react';
 
 export default function BookingForm() {
+  // Replace this with your actual Calendly URL
+  // Example: https://calendly.com/your-username/30min-strategy-call
+  // You can find this URL in your Calendly account under "Share your link"
+  const CALENDLY_URL = 'https://calendly.com/isaconnectdiscoverycall/30min';
+
   const [formData, setFormData] = useState({
     fullName: '',
     brokerageName: '',
@@ -18,41 +23,37 @@ export default function BookingForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
 
-  // Available time slots
+  // Available time slots - Central Time, starting from 10:00 AM
   const timeSlots = [
-    '9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM',
-    '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM', '4:30 PM'
+    '10:00 AM CT', '10:30 AM CT', '11:00 AM CT', '11:30 AM CT',
+    '12:00 PM CT', '12:30 PM CT', '1:00 PM CT', '1:30 PM CT'
   ];
 
-  // Generate calendar days
+  // Generate next 4 available business days
   const calendarDays = useMemo(() => {
-    const year = currentMonth.getFullYear();
-    const month = currentMonth.getMonth();
-    const firstDay = new Date(year, month, 1);
-    const lastDay = new Date(year, month + 1, 0);
-    const startPadding = firstDay.getDay();
     const days = [];
+    const today = new Date();
+    let currentDay = new Date(today);
     
-    // Add empty slots for padding
-    for (let i = 0; i < startPadding; i++) {
-      days.push(null);
-    }
-    
-    // Add actual days
-    for (let day = 1; day <= lastDay.getDate(); day++) {
-      days.push(new Date(year, month, day));
+    // Find the next business day (Monday-Friday)
+    while (days.length < 4) {
+      currentDay.setDate(currentDay.getDate() + 1);
+      const dayOfWeek = currentDay.getDay();
+      // Skip weekends (0 = Sunday, 6 = Saturday)
+      if (dayOfWeek !== 0 && dayOfWeek !== 6) {
+        days.push(new Date(currentDay));
+      }
     }
     
     return days;
-  }, [currentMonth]);
+  }, []);
 
   const isDateAvailable = (date) => {
     if (!date) return false;
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    const dayOfWeek = date.getDay();
-    // Available Monday-Friday, not in the past
-    return date >= today && dayOfWeek !== 0 && dayOfWeek !== 6;
+    // Check if the date is in our 4 available business days
+    return calendarDays.some(availableDate => 
+      availableDate.toDateString() === date.toDateString()
+    );
   };
 
   const formatDate = (date) => {
@@ -71,8 +72,26 @@ export default function BookingForm() {
       return;
     }
     setIsSubmitting(true);
-    
-    // Demo: Show confirmation instead of redirecting
+
+    // Prepare Calendly URL with pre-filled information
+    const calendlyParams = new URLSearchParams({
+      name: formData.fullName,
+      email: formData.email,
+      // Custom fields for additional information
+      'a1': formData.brokerageName, // Brokerage Name
+      'a2': formData.phone, // Phone
+      'a3': formData.monthlyLeadVolume, // Monthly Lead Volume
+      'a4': formData.message, // Message
+      // Add preferred date/time as notes
+      'a5': `Preferred: ${formatDate(selectedDate)} at ${selectedTime}`
+    });
+
+    const fullCalendlyUrl = `${CALENDLY_URL}?${calendlyParams.toString()}`;
+
+    // Redirect to Calendly
+    window.open(fullCalendlyUrl, '_blank');
+
+    // Show confirmation message
     setTimeout(() => {
       setShowConfirmation(true);
       setIsSubmitting(false);
@@ -95,15 +114,15 @@ export default function BookingForm() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-2xl font-bold text-[#090818] mb-3">Strategy Call Booked!</h3>
+        <h3 className="text-2xl font-bold text-[#090818] mb-3">Redirecting to Calendly...</h3>
         <p className="text-[#4E4E58] mb-2">
-          <span className="font-semibold">{formatDate(selectedDate)}</span> at <span className="font-semibold">{selectedTime}</span>
+          Opening Calendly to schedule your call for <span className="font-semibold">{formatDate(selectedDate)}</span> at <span className="font-semibold">{selectedTime}</span>
         </p>
         <p className="text-[#4E4E58] mb-6">
-          We've sent a confirmation email to <span className="font-semibold">{formData.email}</span>
+          Your information has been pre-filled for convenience.
         </p>
         <p className="text-sm text-[#4E4E58] bg-white/60 rounded-lg p-4">
-          <strong>Demo Mode:</strong> In production, this would integrate with Calendly or your preferred scheduling system.
+          <strong>Calendly Integration:</strong> Complete your booking on Calendly. We&apos;ll receive your scheduling confirmation automatically.
         </p>
       </div>
     );
@@ -209,7 +228,8 @@ export default function BookingForm() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Calendar */}
           <div>
-            <div className="flex items-center justify-between mb-4">
+            {/* Month Navigation - Hidden since we show fixed 4 days */}
+            <div className="flex items-center justify-between mb-4 opacity-0 pointer-events-none">
               <button
                 type="button"
                 onClick={prevMonth}
@@ -220,7 +240,7 @@ export default function BookingForm() {
                 </svg>
               </button>
               <span className="font-semibold text-[#090818]">
-                {currentMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+                Next 4 Business Days
               </span>
               <button
                 type="button"
@@ -233,28 +253,23 @@ export default function BookingForm() {
               </button>
             </div>
             
-            <div className="grid grid-cols-7 gap-1 text-center">
-              {['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map(day => (
-                <div key={day} className="text-xs font-medium text-[#4E4E58] py-2">{day}</div>
-              ))}
+            {/* Simplified 4-day calendar */}
+            <div className="grid grid-cols-2 gap-3">
               {calendarDays.map((date, idx) => (
                 <button
                   key={idx}
                   type="button"
-                  disabled={!isDateAvailable(date)}
-                  onClick={() => date && isDateAvailable(date) && setSelectedDate(date)}
+                  onClick={() => setSelectedDate(date)}
                   className={`
-                    p-2 text-sm rounded-lg transition-all
-                    ${!date ? 'invisible' : ''}
-                    ${date && isDateAvailable(date) 
-                      ? 'hover:bg-purple-100 cursor-pointer text-[#090818]' 
-                      : 'text-gray-300 cursor-not-allowed'}
-                    ${selectedDate && date && selectedDate.toDateString() === date.toDateString() 
-                      ? 'gradient-bg text-white hover:opacity-90' 
-                      : ''}
+                    p-4 text-center rounded-lg border-2 transition-all
+                    ${selectedDate && selectedDate.toDateString() === date.toDateString() 
+                      ? 'gradient-bg text-white border-transparent' 
+                      : 'border-gray-300 hover:border-purple-400 text-[#090818] bg-white'}
                   `}
                 >
-                  {date?.getDate()}
+                  <div className="text-lg font-semibold">{date.toLocaleDateString('en-US', { weekday: 'short' })}</div>
+                  <div className="text-2xl font-bold">{date.getDate()}</div>
+                  <div className="text-sm opacity-75">{date.toLocaleDateString('en-US', { month: 'short' })}</div>
                 </button>
               ))}
             </div>
@@ -328,9 +343,9 @@ export default function BookingForm() {
           </>
         ) : (
           <>
-            Book My Strategy Call
+            Opening Calendly...
             <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
           </>
         )}

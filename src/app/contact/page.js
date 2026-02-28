@@ -4,7 +4,7 @@ import BookingForm from "@/components/BookingForm";
 
 export const metadata = {
   title: "Contact",
-  description: "Get in touch with ISA Connect. Book a strategy call or reach out directly. We respond within 1 business hour.",
+  description: "Get in touch with ISAConnect. Book a strategy call or reach out directly. We respond within 1 business hour.",
 };
 
 export default function ContactPage() {
@@ -37,7 +37,7 @@ export default function ContactPage() {
             </h2>
             <p className="text-lg text-[#4E4E58] mb-8">
               Whether you're a solo agent, team leader, or brokerage owner, we'd love to 
-              learn about your lead generation challenges and show you how ISA Connect can help.
+              learn about your lead generation challenges and show you how ISAConnect can help.
             </p>
 
             <div className="space-y-6">
@@ -135,7 +135,7 @@ export default function ContactPage() {
             Serving Real Estate Professionals Nationwide
           </h2>
           <p className="text-lg text-[#4E4E58] mb-6">
-            ISA Connect serves real estate agents, teams, and brokerages across all 50 states. 
+            ISAConnect serves real estate agents, teams, and brokerages across all 50 states. 
             Our ISAs are trained specifically in U.S. real estate markets and practices.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-[#4E4E58]">
