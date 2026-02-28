@@ -2,6 +2,8 @@
 
 A modern, conversion-focused website for ISA Connect - an outbound call center serving U.S. real estate agents.
 
+*Last updated: March 1, 2026*
+
 ## Tech Stack
 
 - **Framework**: Next.js 16 (App Router)
