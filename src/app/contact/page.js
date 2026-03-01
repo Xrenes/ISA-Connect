@@ -51,10 +51,10 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-[#090818] mb-1">Email Us</h3>
                   <a 
-                    href="mailto:hello@isaconnect.com" 
-                    className="text-[var(--brand-purple)] hover:underline text-lg"
+                    href="mailto:info@isaconnect.co" 
+                    className="text-[var(--brand-purple)] hover:underline"
                   >
-                    hello@isaconnect.com
+                    info@isaconnect.co
                   </a>
                   <p className="text-sm text-[#4E4E58] mt-1">We respond within 1 business hour</p>
                 </div>

@@ -235,11 +235,6 @@ export default function Home() {
               <div className="text-5xl sm:text-6xl font-bold text-white/10 mb-3 sm:mb-4">{step.step}</div>
               <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{step.title}</h3>
               <p className="text-sm sm:text-base text-gray-400">{step.description}</p>
-              
-              {/* Connector line (hidden on mobile and for steps 02, 03, 04) */}
-              {index < steps.length - 1 && index === 0 && (
-                <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-[var(--brand-purple)] to-[var(--brand-pink)] opacity-30"></div>
-              )}
             </div>
           ))}
         </div>
@@ -323,8 +318,8 @@ export default function Home() {
             <div className="mt-8 p-4 bg-white rounded-lg border border-gray-200">
               <p className="text-sm text-[#4E4E58]">
                 <strong className="text-[#090818]">Questions?</strong> Reach us directly at{" "}
-                <a href="mailto:hello@isaconnect.com" className="text-[var(--brand-purple)] hover:underline">
-                  hello@isaconnect.com
+                <a href="mailto:info@isaconnect.co" className="text-[var(--brand-purple)] hover:underline">
+                  info@isaconnect.co
                 </a>{" "}
                 or call{" "}
                 <a href="tel:+13235777064" className="text-[var(--brand-purple)] hover:underline">
