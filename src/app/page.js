@@ -114,7 +114,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="relative overflow-hidden min-h-[500px] sm:min-h-[600px] md:min-h-[700px]">
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: 'url(/ISA-Connect/back.jpg)'}}></div>
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: 'url(/back.jpg)'}}></div>
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 md:py-32 flex items-center min-h-[500px] sm:min-h-[600px] md:min-h-[700px]">
           <div className="text-center max-w-4xl mx-auto w-full">

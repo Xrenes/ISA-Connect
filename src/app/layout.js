@@ -44,8 +44,8 @@ export const metadata = {
     images: ["/images/og-image.png"],
   },
   icons: {
-    icon: '/ISA-Connect/favicon.svg',
-    apple: '/ISA-Connect/favicon.svg',
+    icon: '/favicon.svg',
+    apple: '/favicon.svg',
   },
   robots: {
     index: true,
