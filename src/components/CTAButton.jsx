@@ -7,7 +7,7 @@ export default function CTAButton({
   className = '',
   onClick
 }) {
-  const baseStyles = 'inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-base transition-all duration-200 cursor-pointer';
+  const baseStyles = 'inline-flex items-center justify-center px-6 py-3.5 md:px-8 md:py-4 rounded-lg font-semibold text-base md:text-lg transition-all duration-200 cursor-pointer min-h-[48px] touch-manipulation active:scale-95';
   
   const variants = {
     primary: 'gradient-bg text-white hover:opacity-90 hover:scale-105 shadow-lg',

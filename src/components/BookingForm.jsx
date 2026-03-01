@@ -132,9 +132,9 @@ export default function BookingForm() {
   const labelClasses = "block text-sm font-medium text-[#090818] mb-2";
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
       {/* Contact Info Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         <div>
           <label htmlFor="fullName" className={labelClasses}>
             Full Name *
@@ -222,10 +222,10 @@ export default function BookingForm() {
       </div>
 
       {/* Calendar Section */}
-      <div className="border border-gray-200 rounded-xl p-6 bg-gray-50/50">
-        <h3 className="text-lg font-semibold text-[#090818] mb-4">Select Date & Time</h3>
+      <div className="border border-gray-200 rounded-xl p-4 sm:p-6 bg-gray-50/50">
+        <h3 className="text-base sm:text-lg font-semibold text-[#090818] mb-3 sm:mb-4">Select Date & Time</h3>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
           {/* Calendar */}
           <div>
             {/* Month Navigation - Hidden since we show fixed 4 days */}
@@ -254,22 +254,22 @@ export default function BookingForm() {
             </div>
             
             {/* Simplified 4-day calendar */}
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-2 sm:gap-3">
               {calendarDays.map((date, idx) => (
                 <button
                   key={idx}
                   type="button"
                   onClick={() => setSelectedDate(date)}
                   className={`
-                    p-4 text-center rounded-lg border-2 transition-all
+                    p-3 sm:p-4 text-center rounded-lg border-2 transition-all touch-manipulation active:scale-95
                     ${selectedDate && selectedDate.toDateString() === date.toDateString() 
                       ? 'gradient-bg text-white border-transparent' 
                       : 'border-gray-300 hover:border-purple-400 text-[#090818] bg-white'}
                   `}
                 >
-                  <div className="text-lg font-semibold">{date.toLocaleDateString('en-US', { weekday: 'short' })}</div>
-                  <div className="text-2xl font-bold">{date.getDate()}</div>
-                  <div className="text-sm opacity-75">{date.toLocaleDateString('en-US', { month: 'short' })}</div>
+                  <div className="text-sm sm:text-lg font-semibold">{date.toLocaleDateString('en-US', { weekday: 'short' })}</div>
+                  <div className="text-xl sm:text-2xl font-bold">{date.getDate()}</div>
+                  <div className="text-xs sm:text-sm opacity-75">{date.toLocaleDateString('en-US', { month: 'short' })}</div>
                 </button>
               ))}
             </div>
@@ -277,7 +277,7 @@ export default function BookingForm() {
           
           {/* Time Slots */}
           <div>
-            <p className="text-sm font-medium text-[#090818] mb-3">
+            <p className="text-xs sm:text-sm font-medium text-[#090818] mb-2 sm:mb-3">
               {selectedDate ? `Available times for ${selectedDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}` : 'Select a date first'}
             </p>
             <div className="grid grid-cols-2 gap-2 max-h-64 overflow-y-auto">
@@ -287,7 +287,7 @@ export default function BookingForm() {
                   type="button"
                   onClick={() => setSelectedTime(time)}
                   className={`
-                    py-2 px-3 text-sm rounded-lg border transition-all
+                    py-2.5 sm:py-3 px-2 sm:px-3 text-xs sm:text-sm rounded-lg border transition-all touch-manipulation active:scale-95
                     ${selectedTime === time 
                       ? 'gradient-bg text-white border-transparent' 
                       : 'border-gray-300 hover:border-purple-400 text-[#090818] bg-white'}
@@ -296,7 +296,7 @@ export default function BookingForm() {
                   {time}
                 </button>
               )) : (
-                <p className="col-span-2 text-sm text-[#4E4E58] text-center py-8">
+                <p className="col-span-2 text-xs sm:text-sm text-[#4E4E58] text-center py-6 sm:py-8">
                   Please select a date from the calendar
                 </p>
               )}
@@ -305,8 +305,8 @@ export default function BookingForm() {
         </div>
         
         {selectedDate && selectedTime && (
-          <div className="mt-4 p-3 bg-purple-50 rounded-lg border border-purple-100">
-            <p className="text-sm text-[#090818]">
+          <div className="mt-3 sm:mt-4 p-2.5 sm:p-3 bg-purple-50 rounded-lg border border-purple-100">
+            <p className="text-xs sm:text-sm text-[#090818]">
               <span className="font-semibold">Selected:</span> {formatDate(selectedDate)} at {selectedTime}
             </p>
           </div>

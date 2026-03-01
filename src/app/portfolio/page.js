@@ -16,13 +16,13 @@ export default function PortfolioPage() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-white">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-pink-50 opacity-50"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-28">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-[#090818] mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#090818] mb-4 sm:mb-6 px-2">
               Real Results for{" "}
-              <span className="gradient-text">Real Estate Teams</span>
+              <span className="gradient-text block sm:inline">Real Estate Teams</span>
             </h1>
-            <p className="text-xl text-[#4E4E58]">
+            <p className="text-base sm:text-lg md:text-xl text-[#4E4E58] px-2">
               Explore how ISA Connect has helped agents, teams, and brokerages 
               convert more leads into appointments and close more deals.
             </p>
