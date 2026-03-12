@@ -7,6 +7,6 @@ export default function robots() {
       allow: '/',
       disallow: ['/api/', '/_next/'],
     },
-    sitemap: 'https://isaconnect.com/sitemap.xml',
+    sitemap: 'https://www.isaconnect.co/sitemap.xml',
   };
 }

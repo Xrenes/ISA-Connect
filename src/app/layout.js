@@ -24,7 +24,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://isaconnect.com",
+    url: "https://www.isaconnect.co",
     siteName: "ISAConnect",
     title: "ISAConnect | Real Estate Lead Conversion & Appointment Setting",
     description: "We act as a dedicated Inside Sales Agent (ISA) team that converts leads into qualified appointments.",

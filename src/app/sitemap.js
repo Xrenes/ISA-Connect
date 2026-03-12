@@ -3,7 +3,7 @@ import { getAllPosts } from '@/lib/mdx';
 export const dynamic = 'force-static';
 
 export default function sitemap() {
-  const baseUrl = 'https://isaconnect.com';
+  const baseUrl = 'https://www.isaconnect.co';
 
   // Get all blog posts
   const blogPosts = getAllPosts('blog').map((post) => ({
